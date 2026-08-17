@@ -12,6 +12,8 @@ export default function App() {
   const [error, setError] = useState("");
   const [result, setResult] = useState(null);
 
+  const API_BASE = import.meta.env.VITE_API_URL || "";
+
   function handleFileSelect(file, err) {
     setResumeFile(file);
     setFileError(err || "");
