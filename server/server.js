@@ -5,15 +5,14 @@ import mongoose from "mongoose";
 import analyzeRouter from "./routes/analyze.js";
 
 const app = express();
-app.use(cors());
 
-const cors = require("cors");
+// const cors = require("cors");
 
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://resu-match-ai-xi.vercel.app/",
+      "https://resu-match-ai-xi.vercel.app",
     ],
     credentials: true,
   })
