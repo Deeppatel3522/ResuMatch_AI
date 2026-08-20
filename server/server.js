@@ -7,14 +7,17 @@ import analyzeRouter from "./routes/analyze.js";
 const app = express();
 app.use(cors());
 
-// const corsOrigin = process.env.CORS_ORIGIN;
-// app.use(
-//   cors(
-//     corsOrigin
-//       ? { origin: corsOrigin }
-//       : {} // permissive default for local dev
-//   )
-// );
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://resu-match-ai-xi.vercel.app/",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json({ limit: "2mb" }));
 
 app.get("/api/health", (req, res) => res.json({ status: "ok" }));

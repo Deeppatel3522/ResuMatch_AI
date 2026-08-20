@@ -20,6 +20,7 @@ export default function App() {
   }
 
   async function handleSubmit(e) {
+    console.log("BASE API ==>", API_BASE);
     e.preventDefault();
     setError("");
     setResult(null);
