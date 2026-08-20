@@ -46,7 +46,7 @@ export default function App() {
       }
       formData.append("jobDescription", jobDescription);
 
-      const res = await fetch("/api/analyze", {
+      const res = await fetch(`${API_BASE}/api/analyze`, {
         method: "POST",
         body: formData,
       });
